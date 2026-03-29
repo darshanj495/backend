@@ -1,0 +1,16 @@
+# compiled files
+*.o
+*.out
+*.exe
+
+# build folders
+/build/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+/node_modules

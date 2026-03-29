@@ -1,0 +1,41 @@
+{
+  "cats": {
+    "name": "cats",
+    "followers": 25000,
+    "following": 5,
+    "posts": [
+      {
+        "image": "https://headsupfortails.com/cdn/shop/articles/Bengal_Cat_1.jpg?v=1754376983",
+        "likes": 200,
+        "comments": 17
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNKMjK_3cVpDbePqf_1s1clkD_ZEzSTQEGRw&s",
+        "likes": 312,
+        "comments": 19
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThTtsrFI9oXVggaHZasJddDE7H2BmFU9653A&s",
+        "likes": 1065,
+        "comments": 200
+      }
+    ]
+  },
+  "dogs": {
+    "name": "dogs",
+    "followers": 75000,
+    "following": 20,
+    "posts": [
+      {
+        "image": "https://www.akc.org/wp-content/uploads/2017/11/Doberman-Pinscher-standing-outdoors.jpg",
+        "likes": 500,
+        "comments": 45
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxNjMvrb27uh_-0uufRx2udUKl1YxbuLRwbA&s",
+        "likes": 890,
+        "comments": 120
+      }
+    ]
+  }
+}

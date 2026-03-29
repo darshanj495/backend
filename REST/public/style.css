@@ -1,0 +1,142 @@
+/* Global Reset & Typography */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 1. Page Load Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Apply fade-in to the whole page */
+    animation: fadeIn 0.6s ease-out;
+}
+
+h1 {
+    color: maroon;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Post Card Styling with Hover Motion */
+.post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    /* 2. Transition for the hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+    /* Subtle "lift" effect */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.user {
+    font-style: italic;
+    color: maroon;
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Links & Actions */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 0.9rem;
+    margin-right: 15px;
+    font-weight: 600;
+    /* 3. Smooth color transition for links */
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Form & Input Styling with Focus Motion */
+input, textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    display: block;
+    /* 4. Smooth border and shadow on focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: maroon;
+    box-shadow: 0 0 8px rgba(128, 0, 0, 0.25);
+}
+
+/* Button Styling with Scale Motion */
+button {
+    background-color: maroon;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    /* 5. Smooth background and scale transition */
+    transition: background-color 0.2s ease, transform 0.1s active;
+}
+
+button:hover {
+    background-color: #600000;
+}
+
+button:active {
+    /* 6. Subtle "press" effect when clicked */
+    transform: scale(0.96);
+}
+
+/* Delete Button Variation */
+form[action*="DELETE"] button {
+    background-color: #dc3545;
+}
+
+form[action*="DELETE"] button:hover {
+    background-color: #a71d2a;
+}
+
+/* "Create New Post" Link Button Style */
+body > a {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body > a:hover {
+    background-color: #218838;
+    text-decoration: none;
+    transform: scale(1.05);
+}
