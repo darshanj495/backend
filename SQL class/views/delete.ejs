@@ -3,14 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Delete Account | UserDB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #161a23;
+      --border: #252b38;
+      --accent: #5b7cfa;
+      --danger: #f05252;
+      --danger-hover: #ff6b6b;
+      --text: #e8eaf0;
+      --muted: #6b7280;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid #3a2020;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 8px 40px rgba(240,82,82,0.08);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .warning-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--danger);
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle { color: var(--muted); font-size: 0.875rem; margin-bottom: 2rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input:focus { border-color: var(--danger); }
+    input::placeholder { color: #3a4055; }
+
+    .btn {
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--danger);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .btn:hover { background: var(--danger-hover); transform: translateY(-1px); }
+  </style>
 </head>
 <body>
-    <h2>Are you sure you want to delete your account?</h2>
-    <form method="Post" action="/users?_method=DELETE">
-      <input type="text" name="email" placeholder="enter  email">
-      <input type="password" name="password" placeholder="enter password">
-      <button>Delete</button>
+  <div class="card">
+    <a href="/users" class="back-link">← Back to Users</a>
+    <div class="warning-icon">⚠️</div>
+    <h2>Delete Account</h2>
+    <p class="subtitle">This action is permanent and cannot be undone. Enter your credentials to confirm.</p>
+
+    <form method="POST" action="/users?_method=DELETE">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Confirm your password" required>
+      </div>
+
+      <button class="btn">Yes, Delete My Account</button>
     </form>
+  </div>
 </body>
 </html>
